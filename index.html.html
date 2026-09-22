@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 모임 공지 & 투표</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f6f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px; /* 모바일 화면에 최적화 */
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 24px 20px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e8f3ff;
+            color: #0066ff;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111;
+        }
+        .date {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+        .notice-box {
+            background-color: #f9f9fb;
+            border-left: 4px solid #0066ff;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            margin-bottom: 25px;
+            white-space: pre-line;
+        }
+        .section-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* 구글 폼 프레임 스타일 */
+        .vote-frame {
+            width: 100%;
+            height: 520px;
+            border: none;
+            border-radius: 12px;
+            background: #fafafa;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 상태 태그 -->
+    <span class="tag">📢 필독 공지</span>
+
+    <!-- 공지 제목 -->
+    <h1>이번 주 팀 회식 및 일정 안내</h1>
+    <div class="date">작성일: 2026.09.22 | 마감: 9월 25일(금) 18:00까지</div>
+
+    <!-- 공지 내용 -->
+    <div class="notice-box">
+안녕하세요 팀원 여러분! 👋
+
+이번 주 금요일 저녁 회식 장소 및 일정 확정을 위해 투표를 진행합니다.
+아래 설문에서 편하신 항목에 투표해 주세요!
+
+* 빠른 메뉴 확정을 위해 **'결과에 따름'** 옵션도 준비되어 있습니다.
+    </div>
+
+    <!-- 투표 영역 -->
+    <div class="section-title">🗳️ 투표 참여하기</div>
+    
+    <!-- ⚠️ 아래 src="" 부분에 Step 1에서 복사한 구글 폼 URL 주소를 넣으세요 -->
+    <iframe 
+        class="vote-frame" 
+        src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" 
+        loading="lazy">
+        로드 중…
+    </iframe>
+
+    <div class="footer">
+        © 우리 팀 전용 공지 게시판
+    </div>
+</div>
+
+</body>
+</html>
