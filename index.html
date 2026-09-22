@@ -21,7 +21,7 @@
         }
         .container {
             width: 100%;
-            max-width: 500px; /* 모바일 화면에 최적화 */
+            max-width: 500px;
             background: #ffffff;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -67,7 +67,6 @@
             align-items: center;
             gap: 6px;
         }
-        /* 구글 폼 프레임 스타일 */
         .vote-frame {
             width: 100%;
             height: 520px;
@@ -86,29 +85,25 @@
 <body>
 
 <div class="container">
-    <!-- 상태 태그 -->
     <span class="tag">📢 필독 공지</span>
 
-    <!-- 공지 제목 -->
-    <h1>10월25일(일) 자체전 참석 여부</h1>
+    <h1>이번 주 팀 회식 및 일정 안내</h1>
     <div class="date">작성일: 2026.09.22 | 마감: 9월 25일(금) 18:00까지</div>
 
-    <!-- 공지 내용 -->
     <div class="notice-box">
 안녕하세요 팀원 여러분! 👋
 
-10월 25일에 진행 될 자체전 참석 여부를 받고 있습니다.
+이번 주 금요일 저녁 회식 장소 및 일정 확정을 위해 투표를 진행합니다.
+아래 설문에서 편하신 항목에 투표해 주세요!
 
-원활한 업무를 위해 빠른 투표 부탁드립니다.
+* 빠른 메뉴 확정을 위해 **'결과에 따름'** 옵션도 준비되어 있습니다.
     </div>
 
-    <!-- 투표 영역 -->
     <div class="section-title">🗳️ 투표 참여하기</div>
     
-    <!-- ⚠️ 아래 src="" 부분에 Step 1에서 복사한 구글 폼 URL 주소를 넣으세요 -->
     <iframe 
         class="vote-frame" 
-        src=<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScie4S2ka8Luyauv9e1Wu4PPPOApQojf_d4alqJy3jOxCA_Yw/viewform?embedded=true">로드 중…</iframe>
+        src="https://docs.google.com/forms/d/e/1FAIpQLScie4S2ka8Luyauv9e1Wu4PPPOApQojf_d4alqJy3jOxCA_Yw/viewform?embedded=true" 
         loading="lazy">
         로드 중…
     </iframe>
