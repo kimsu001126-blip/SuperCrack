@@ -56,7 +56,7 @@
             background-color: #f8f9fa;
             border: 1px solid #e9ecef;
             border-radius: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             overflow: hidden;
         }
         details.rules-accordion summary {
@@ -93,6 +93,31 @@
             border-top: 1px solid #e9ecef;
             max-height: 400px;
             overflow-y: auto;
+        }
+
+        /* 일정 카드 스타일 */
+        .schedule-box {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .schedule-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .schedule-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
         }
 
         .section-title {
@@ -256,6 +281,12 @@
         </div>
     </details>
 
+    <!-- 🗓️ 10월 경기 및 훈련 일정 안내 -->
+    <div class="schedule-box">
+        <div class="schedule-title">📅 10월 경기 및 훈련 일정</div>
+        <img src="schedule.jpg" alt="10월 일정표" class="schedule-img">
+    </div>
+
     <!-- 첫 번째 투표 -->
     <div class="section-title">🗳️ 첫 번째 투표</div>
     <iframe 
@@ -270,6 +301,15 @@
     <iframe 
         class="vote-frame" 
         src="https://docs.google.com/forms/d/e/1FAIpQLScie4S2ka8Luyauv9e1Wu4PPPOApQojf_d4alqJy3jOxCA_Yw/viewform?embedded=true" 
+        loading="lazy">
+        로드 중…
+    </iframe>
+
+    <!-- 세 번째 투표 -->
+    <div class="section-title">🗳️ 세 번째 투표</div>
+    <iframe 
+        class="vote-frame" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLScfzqqQWKbvkHH_fYTZHZEHDQPFTQ6jSupcxd8dvQaeW0HyJQ/viewform?embedded=true" 
         loading="lazy">
         로드 중…
     </iframe>
