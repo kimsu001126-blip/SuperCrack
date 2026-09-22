@@ -95,7 +95,7 @@
             overflow-y: auto;
         }
 
-        /* 일정 카드 스타일 */
+        /* 일정 카드 및 이미지 최적화 스타일 */
         .schedule-box {
             background: #ffffff;
             border: 1px solid #e9ecef;
@@ -103,21 +103,29 @@
             padding: 16px;
             margin-bottom: 25px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            overflow: hidden; /* 영역 밖 넘침 방지 */
+            width: 100%;
         }
         .schedule-title {
             font-size: 15px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #111;
             display: flex;
             align-items: center;
             gap: 6px;
         }
-        .schedule-img {
+        .schedule-img-wrapper {
             width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .schedule-img {
+            max-width: 100%;
             height: auto;
             border-radius: 8px;
             display: block;
+            object-fit: contain;
         }
 
         .section-title {
@@ -287,7 +295,9 @@
     <!-- 🗓️ 10월 경기 및 훈련 일정 안내 -->
     <div class="schedule-box">
         <div class="schedule-title">📅 10월 경기 및 훈련 일정</div>
-        <img src="schedule.png" alt="10월 일정표" class="schedule-img">
+        <div class="schedule-img-wrapper">
+            <img src="schedule.png" alt="10월 일정표" class="schedule-img">
+        </div>
     </div>
 
     <!-- 첫 번째 투표 -->
