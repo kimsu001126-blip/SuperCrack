@@ -3,47 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>팀 공지 및 투표 센터</title>
+    <title>슈퍼크랙 공지 & 투표</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
-        body { background: #f5f6f8; padding: 20px 15px; display: flex; justify-content: center; }
-        .container { width: 100%; max-width: 500px; }
-        h1 { font-size: 20px; margin-bottom: 20px; color: #111; }
-        .card {
-            background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-decoration: none; color: inherit; display: block;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
-        .badge { display: inline-block; padding: 3px 8px; font-size: 11px; font-weight: bold; border-radius: 10px; margin-bottom: 8px; }
-        .active { background: #e8f3ff; color: #0066ff; }
-        .closed { background: #eee; color: #777; }
-        .title { font-size: 16px; font-weight: bold; margin-bottom: 4px; }
-        .date { font-size: 12px; color: #888; }
+        body {
+            background-color: #f5f6f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 24px 20px;
+        }
+        .header-tag {
+            display: inline-block;
+            background-color: #e8f3ff;
+            color: #0066ff;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #111;
+        }
+        .sub-title {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+        /* 접이식 운영 규정 스타일 */
+        details.rules-accordion {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        details.rules-accordion summary {
+            padding: 14px 16px;
+            font-weight: bold;
+            font-size: 15px;
+            color: #212529;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f1f3f5;
+            user-select: none;
+        }
+        details.rules-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+        details.rules-accordion summary::after {
+            content: "▼";
+            font-size: 11px;
+            color: #666;
+            transition: transform 0.2s;
+        }
+        details[open].rules-accordion summary::after {
+            transform: rotate(180deg);
+        }
+        .rules-content {
+            padding: 16px;
+            font-size: 13px;
+            color: #495057;
+            white-space: pre-line;
+            line-height: 1.7;
+            border-top: 1px solid #e9ecef;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vote-frame {
+            width: 100%;
+            height: 550px;
+            border: none;
+            border-radius: 12px;
+            background: #fafafa;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
+
 <div class="container">
-    <h1>📢 팀 공지 & 투표 목록</h1>
+    <span class="header-tag">⚡ SUPER CRACK</span>
 
-    <!-- 투표 1 -->
-    <a href="notice1.html" class="card">
-        <span class="badge active">🔥 진행중</span>
-        <div class="title">9월 회식 메뉴 및 장소 선정</div>
-        <div class="date">마감: 9월 25일(금)</div>
-    </a>
+    <h1>슈퍼크랙 팀 공지 & 투표</h1>
+    <div class="sub-title">모임 운영 공지사항 및 투표를 한곳에서 확인하세요.</div>
 
-    <!-- 투표 2 -->
-    <a href="notice2.html" class="card">
-        <span class="badge active">🔥 진행중</span>
-        <div class="title">다음 주 풋살 일정 참여 조사</div>
-        <div class="date">마감: 9월 28일(월)</div>
-    </a>
+    <!-- 📌 접이식 슈퍼크랙 운영 규정 -->
+    <details class="rules-accordion">
+        <summary>📋 [클릭] 슈퍼크랙 운영 규정 보기</summary>
+        <div class="rules-content">
+📢 슈퍼크랙 운영 안내
+ 
+안녕하세요. 원활한 모임 운영을 위해 슈퍼크랙 운영 기준을 안내드립니다.
+아래 공지 내용을 확인하시어 협조 부탁드립니다.
+ 
+━━━━━━━━━━━━━━
+📌 공지방 운영 안내
+━━━━━━━━━━━━━━
+이 공지방은 아래 내용을 위한 공간입니다.
+ 
+✔ 경기 일정 공유 
+✔ 참석 투표 및 리스트 작성 
+✔ 운영 관련 공지
+ 
+경기 일정이 공지되면 빠른 투표와 리스트 작성을 부탁드립니다.
+참석이 어려워질 경우에는 가능한 한 미리 말씀해 주세요.
+원활한 공지 전달을 위해 공지방 내 사담은 자제 부탁드립니다.
+ 
+━━━━━━━━━━━━━━
+📝 리스트 작성 안내
+━━━━━━━━━━━━━━
+리스트 작성 시에는 반드시 전체 복사 → 붙여넣기 방식으로 작성해 주세요.
+※ 일부만 수정하여 작성할 경우 명단이 누락될 수 있습니다.
+ 
+━━━━━━━━━━━━━━
+💸 회비 안내
+━━━━━━━━━━━━━━
+✔ 정회원
+- 월 회비 : 30,000원
+- 납부 기간 : 매월 1일 ~ 5일
 
-    <!-- 마감된 공지 -->
-    <a href="#" class="card" style="opacity: 0.6;">
-        <span class="badge closed">완료</span>
-        <div class="title">8월 활동 정산 안내</div>
-        <div class="date">2026.08.31 종료</div>
-    </a>
+✔ 신규 회원
+- 가입한 달에는 참여 예정 횟수에 따라 아래 기준 중 하나를 적용합니다.
+    i) 월 1~2회 참여 예정 : 회당 10,000원
+    ii) 월 3회 이상 참여 예정 : 월 회비 30,000원
+- 다음 달부터는 정회원으로 전환됩니다.
+ 
+📌 운영 기준
+- 모든 정회원은 가입 시기와 관계없이 동일한 월 회비를 적용합니다.
+- 별도 연락 없이 회비 미납이 지속될 경우, 회비 납부 전까지 훈련 및 경기 참여가 제한됩니다.
+- 회비는 모임 운영 상황에 따라 조정될 수 있습니다.
+
+※ 납부 계좌 : 카카오뱅크 3333375480889 (유경태)
+
+━━━━━━━━━━━━━━
+🧾 회비 사용 안내
+━━━━━━━━━━━━━━
+회비는 아래 항목에 사용됩니다.
+ 
+✔ 구장 대여비 
+✔ 장비 및 팀 용품 구매 
+✔ 단체 활동 및 모임 운영비
+ 
+회비는 모임 통장으로 관리하며, 사용 내역은 연말에 공지방을 통해 공유하겠습니다.
+
+━━━━━━━━━━━━━━
+📌 유지회비 안내
+━━━━━━━━━━━━━━
+활동 참여가 어려운 경우 회원 자격 유지를 위한 유지회비 제도를 운영합니다.
+
+✔ 유지회비 : 월 10,000원
+
+✔ 신청 기간
+- 적용을 원하는 달의 전월 25일 ~ 해당 월 10일
+
+✔ 신청 방법
+- 모임장(슈짱)에게 "유지회비 신청"이라고 미리 연락해 주세요.
+
+✔ 운영 기준
+- 연간 최대 3개월까지 적용 가능합니다.
+- 이후 재신청은 정상 회비를 6개월 연속 납부한 뒤 가능합니다.
+- 업무, 부상, 시험, 출장 등 불가피한 사유를 우선 고려하여 적용합니다.
+
+━━━━━━━━━━━━━━
+⚠ 참여 및 취소 규정
+━━━━━━━━━━━━━━
+✔ 회원
+- 투표 마감 : 경기 3일 전
+- 투표 마감 이후 취소 시 패널티 3,000원
+ 
+✔ 비회원 (게스트)
+- 최초 참여 1회 무료
+- 이후부터 회당 10,000원
+- 투표 마감 이후 취소 시 참가비 환불 불가
+
+✔ 용병
+- 경기 최소인원 미달 시 참가비 면제
+- 경기 최소인원 충족 시 회당 10,000원
+
+※ 경기 최소인원 기준
+- 자체전: 성별무관 10명
+- 매치 : 5vs5 최소인원 7명 / 6vs6 최소인원 8명
+ 
+📌 안내사항
+투표 마감 이후 취소는 구장 예약 및 경기 진행에 영향을 줄 수 있으므로 위 기준을 적용하며, 패널티 금액은 모임 운영비로 사용됩니다.
+ 
+━━━━━━━━━━━━━━
+⚽ 경기 및 훈련 안내
+━━━━━━━━━━━━━━
+✔ 경기 및 훈련 시간은 꼭 지켜주세요.
+✔ 지각 또는 불참은 가능한 한 미리 알려주세요.
+✔ 부상 방지를 위해 개인 장비와 준비운동을 꼭 해주세요.
+✔ 과격한 플레이, 위험한 태클 및 비매너 행동은 금지입니다.
+✔ 상대방을 향한 욕설, 비난 및 불쾌한 언행은 삼가 주세요.
+✔ 실력 차이를 존중하며 함께 즐기는 분위기를 만들어 주세요.
+✔ 장소 이용 후 쓰레기 및 뒷정리를 부탁드립니다.
+ 
+━━━━━━━━━━━━━━
+🚪 가입 및 탈퇴 안내
+━━━━━━━━━━━━━━
+가입과 탈퇴는 자유롭게 가능합니다.
+ 
+✔ 가입 시 : 간단한 자기소개와 인사
+✔ 탈퇴 시 : 간단한 이유와 인사
+ 
+부탁드립니다.
+ 
+━━━━━━━━━━━━━━
+ 
+앞으로도 서로를 배려하며, 함께 성장하고 즐겁게 운동하는 슈퍼크랙이 되었으면 좋겠습니다.
+ 
+감사합니다. ⚡
+        </div>
+    </details>
+
+    <!-- 첫 번째 투표 -->
+    <div class="section-title">🗳️ 첫 번째 투표</div>
+    <iframe 
+        class="vote-frame" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdwKToZ7JZRreS9YqNCyw_k_Tt--6Dm2lF2nQ5-zefkESwjxA/viewform?embedded=true" 
+        loading="lazy">
+        로드 중…
+    </iframe>
+
+    <!-- 두 번째 투표 -->
+    <div class="section-title">🗳️ 두 번째 투표</div>
+    <iframe 
+        class="vote-frame" 
+        src="https://docs.google.com/forms/d/e/1FAIpQLScie4S2ka8Luyauv9e1Wu4PPPOApQojf_d4alqJy3jOxCA_Yw/viewform?embedded=true" 
+        loading="lazy">
+        로드 중…
+    </iframe>
+
+    <div class="footer">
+        © 슈퍼크랙(SuperCrack) 전용 공지 게시판
+    </div>
 </div>
+
 </body>
 </html>
